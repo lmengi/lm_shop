@@ -6,6 +6,13 @@ spring:
     url: jdbc:mysql://49.234.101.175:3306/shop_wlm?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  application:
+    name: shop-ware
 
 #配置mybatis扫描路径和数据库ID自增#
 mybatis-plus:
@@ -13,3 +20,6 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto
+
+server:
+  port: 9000

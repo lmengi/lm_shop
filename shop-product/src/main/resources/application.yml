@@ -7,9 +7,20 @@ spring:
     username: root
     password: root
 
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+  application:
+    name: shop-product
+
 #配置mybatis扫描路径和数据库ID自增#
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
   global-config:
     db-config:
       id-type: auto
+
+server:
+  port: 8000
