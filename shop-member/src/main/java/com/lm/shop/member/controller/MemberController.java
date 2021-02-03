@@ -1,9 +1,12 @@
 package com.lm.shop.member.controller;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Date;
 import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
+import com.lm.shop.member.feign.CouponFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,6 +34,19 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
+    @Autowired
+    private CouponFeignClient couponFeignClient;
+
+    @RequestMapping("/test")
+    public R test()
+    {
+        MemberEntity entity = new MemberEntity();
+        entity.setUsername("李上科");
+        entity.setBirth(new Date());
+
+        R coupon = couponFeignClient.getCoupon();
+        return  R.ok().put("member", entity).put("coupon", coupon.get("coupon"));
+    }
     /**
      * 列表
      */

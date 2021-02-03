@@ -3,7 +3,7 @@ package com.lm.shop.coupon;
 import com.lm.shop.coupon.entity.CouponEntity;
 import com.lm.shop.coupon.service.CouponService;
 import net.sf.jsqlparser.expression.DateTimeLiteralExpression;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
